@@ -1,0 +1,204 @@
+/* ## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+Moderate violet: hsl(263, 55%, 52%)
+Very dark grayish blue: hsl(217, 19%, 35%)
+Very dark blackish blue: hsl(219, 29%, 14%)
+White: hsl(0, 0%, 100%)
+
+### Neutral
+
+Light gray: hsl(0, 0%, 81%)
+Light grayish blue: hsl(210, 46%, 95%)
+
+Note for text colors:
+
+1. "Verified Graduate" has the same color as the person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity
+
+## Typography
+
+### Body Copy
+
+- Font size: 13px
+
+### Font
+
+- Family: [Barlow Semi Condensed](https://fonts.google.com/specimen/Barlow+Semi+Condensed)
+- Weights: 500, 600 */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    background-color: hsl(210, 46%, 95%);
+}
+
+h3, h5, p {
+    margin: 0;
+}
+
+.cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    height: 80%;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 25px;
+    grid-template-areas: "daniel daniel jonathan kira"
+                         "jeanette patrick patrick kira";
+}
+
+.blog {
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 1px 0px 20px 0px #0000002e;
+}
+
+.blog-top {
+    display: flex;
+    grid-template-columns: .2fr .8fr;
+}
+
+.blog-figure {
+    width: 30px;
+}
+
+.blog-figure img {
+    border-radius: 100%;
+    width: 100%;
+}
+
+.blog-top-texts {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin-left: 15px;
+}
+
+.blog-top-texts h5 {
+    align-self: top;
+    font-size: 13px;
+}
+
+.blog-top-texts p {
+    align-self: top;
+    font-size: 11px;
+    color: hsl(0, 0%, 81%);
+}
+
+.blog-mid h3 {
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: .7px;
+}
+
+.daniel {
+    grid-area: daniel;
+    background-color: hsl(263, 55%, 52%);
+    background-image: url('images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-position-x: 80%;
+    color: white;
+    display: grid;
+    grid-template-rows: 20% 30% 50%;
+    align-items: center;
+}
+
+.daniel .blog-top .blog-figure img {
+    border: 1px solid violet;
+}
+
+.daniel .blog-bottom p {
+    color:hsl(0, 0%, 81%);
+}
+
+.jonathan {
+    grid-area: jonathan;
+    background-color: hsl(217, 19%, 35%);
+    color: white;
+    display: grid;
+    grid-template-rows: 20% 30% 50%;
+    align-items: center;
+}
+
+.jonathan .blog-bottom p {
+    color: hsl(0, 0%, 81%);
+}
+
+.kira {
+    grid-area: kira;
+    background-color: hsl(0, 0%, 100%);
+    display: grid;
+    grid-template-rows: 10% 20% 70%;
+    align-items: center;
+}
+
+.kira .blog-bottom p {
+    color: rgb(82, 82, 82);
+}
+
+.jeanette {
+    grid-area: jeanette;
+    background: hsl(0, 0%, 100%);
+    display: grid;
+    grid-template-rows: 20% 30% 50%;
+    align-items: center;
+}
+
+.patrick {
+    grid-area: patrick;
+    background-color: hsl(219, 29%, 14%);
+    color: white;
+    display: grid;
+    grid-template-rows: 20% 40% 40%;
+    align-items: center;
+}
+
+.patrick .blog-top .blog-figure img {
+    border: 1px solid hsl(263, 55%, 52%);
+}
+
+.patrick .blog-bottom p {
+    color: hsl(0, 0%, 81%);
+}
+
+
+@media screen and (max-width: 500px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-areas: "daniel"
+                             "daniel"
+                             "jonathan"
+                             "jeanette"
+                             "patrick"
+                             "patrick"
+                             "kira"
+                             "kira";
+        height: -webkit-fill-available;
+    }
+
+    .cont {
+        margin: 20px 0;
+    }
+}
