@@ -165,6 +165,10 @@ h3, h5, p {
     align-items: center;
 }
 
+.jeanette .blog-bottom p {
+    color: rgb(82, 82, 82);
+}
+
 .patrick {
     grid-area: patrick;
     background-color: hsl(219, 29%, 14%);
